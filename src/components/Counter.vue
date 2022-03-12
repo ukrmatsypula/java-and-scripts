@@ -1,7 +1,7 @@
 <template>
   <div class="counter">
     <div class="minus" @click="minus">-</div>
-    <input type="number" :value="counter" />
+    <input type="number" :value="counter" min="1" max="10" />
     <div class="plus" @click="plus">+</div>
   </div>
 </template>
@@ -10,7 +10,7 @@
 export default {
   name: "Counter",
   data: () => ({
-    counter: 1 ,
+    counter: 1,
   }),
   methods: {
     minus() {
@@ -20,17 +20,18 @@ export default {
       this.counter--;
     },
     plus() {
-      if(this.counter > 9){
+      if (this.counter > 9) {
         return;
       }
-      this.counter++
+      this.counter++;
     },
   },
 };
 </script>
 
 <style scoped>
-.minus, .plus {
+.minus,
+.plus {
   display: inline-block;
   width: 20px;
   height: 20px;
