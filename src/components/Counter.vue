@@ -1,8 +1,10 @@
 <template>
   <div class="counter">
-    <div class="minus" @click="minus">-</div>
+    <button type="button" @click="decreaseCount">+</button>
+
     <input type="number" :value="counter" :min="minCount" :max="maxCount" />
-    <div class="plus" @click="plus">+</div>
+
+    <button type="button" @click="increaseCount">-</button>
   </div>
 </template>
 
@@ -15,17 +17,15 @@ export default {
     maxCount: 10,
   }),
   methods: {
-    minus() {
-      if (this.counter <= this.minCount) {
-        return;
+    decreaseCount() {
+      if (this.counter < this.maxCount) {
+        this.counter++;
       }
-      this.counter--;
     },
-    plus() {
-      if (this.counter >= this.maxCount) {
-        return;
+    increaseCount() {
+      if (this.counter > this.minCount) {
+        this.counter--;
       }
-      this.counter++;
     },
   },
 };
