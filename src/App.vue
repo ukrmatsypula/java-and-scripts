@@ -4,6 +4,7 @@
     <My-component />
     <Counter />
     <UserCard />
+    <Cat />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import MyComponent from "@/components/MyComponent.vue";
 import Counter from "@/components/Counter.vue";
 import UserCard from "@/components/UserCard.vue";
 import Search from "@/components/Search.vue";
+import Cat from '@/components/Cat.vue';
 
 export default {
   name: "App",
@@ -20,6 +22,7 @@ export default {
     Counter,
     UserCard,
     Search,
+    Cat,
   },
 };
 </script>
