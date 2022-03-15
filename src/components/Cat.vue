@@ -14,7 +14,7 @@
       />
       <p v-else>Кот скоро вернется...</p>
     </div>
-    <button @click="isCatVisible = !isCatVisible">Спрятать / Показать</button>
+    <button @click="isCatVisible = !isCatVisible">{{ showHideText }}</button>
     <button @click="filter.shadow = !filter.shadow">add shadow</button>
     <button @click="filter.sepia = !filter.sepia">sepia</button>
     <button @click="filter.isBorder = !filter.isBorder">add border</button>
@@ -49,6 +49,9 @@ export default {
   computed: {
     dinamicRotate() {
       return `transform: rotate(${this.filter.rotate.currentValue}deg)`;
+    },
+    showHideText() {
+      return this.isCatVisible ? "Спрятать" : "Показать";
     },
   },
 };
