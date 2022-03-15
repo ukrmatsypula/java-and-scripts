@@ -1,6 +1,9 @@
 <template>
   <div>
     <h1>Писменные столы</h1>
+    <MyInput v-model="searchText" />
+    <button type="button">Найти</button>
+    {{ searchText }}
     <ul>
       <li v-for="(product, index) in products" :key="index">
         <ProductCart
@@ -17,13 +20,16 @@
 
 <script>
 import ProductCart from "@/components/Products/ProductCart.vue";
+import MyInput from "@/components/MyInput.vue";
 
 export default {
   name: "ProductList",
   components: {
     ProductCart,
+    MyInput,
   },
   data: () => ({
+    searchText: "",
     products: [
       {
         title: "Стол Jim",
