@@ -2,9 +2,9 @@
   <div>
     <h1>Писменные столы</h1>
     <MyInput v-model="searchText" />
-    <button type="button">Найти</button>
+    <button type="button" @click="search">Найти</button>
     {{ searchText }}
-    <ul>
+    <ul class="flex">
       <li v-for="(product, index) in products" :key="index">
         <ProductCart
           :title="product.title"
@@ -58,8 +58,16 @@ export default {
     addToCart(product) {
       console.log("Товар успешно добавлен в корзину ", { ...product });
     },
+    search() {
+      console.log("Загрузить товары: " + this.searchText);
+    },
   },
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.flex {
+  display: flex;
+  justify-content: center;
+}
+</style>
